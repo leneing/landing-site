@@ -20,7 +20,8 @@
   --card-foreground: 224 71.4% 4.1%;
   --border: 220 13% 91%;
   --radius: 0.5rem;
-  
+  --navbar-height: 80px;
+  --bf-banner-offset: 80px;
   --gradient-primary: linear-gradient(135deg, hsl(262.1 83.3% 57.8%), hsl(250 100% 70%));
   --gradient-secondary: linear-gradient(180deg, hsl(var(--secondary)), hsl(var(--background)));
 }
@@ -578,8 +579,193 @@ h3 {
   }
 }
 
+/* Black Friday Fixed Banner */
+.bf-fixed {
+  position: sticky;
+  top: var(--bf-banner-offset);
+  z-index: 950;
+  background: linear-gradient(90deg, #5330c8 0%, #05000f 100%);
+  color: #f8fafc;
+  padding: 1rem 0;
+  box-shadow: 0 20px 38px rgba(8, 2, 20, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bf-fixed.bf-hidden {
+  display: none;
+}
+
+.bf-fixed-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.bf-fixed-badge span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffdf6b 0%, #ff7a18 100%);
+  color: #121212;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
+}
+
+.bf-fixed-offer p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.bf-fixed-offer strong {
+  font-weight: 700;
+}
+
+.bf-fixed-deadline,
+.bf-fixed-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.bf-fixed-deadline::before,
+.bf-fixed-actions::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  border-left: 1px dashed rgba(255, 255, 255, 0.28);
+}
+
+.bf-fixed-icon {
+  width: 34px;
+  height: 34px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.bf-fixed-deadline-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bf-deadline-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.bf-deadline-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.bf-fixed-actions {
+  gap: 0.75rem;
+}
+
+.bf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.28);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.bf-btn-primary {
+  background: #ffffff;
+  color: #111827;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.bf-btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.bf-btn-secondary {
+  background: transparent;
+  color: #f8fafc;
+}
+
+.bf-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bf-fixed-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: rgba(248, 250, 252, 0.75);
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bf-fixed-close:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .bf-fixed {
+    position: static;
+  }
+
+  .bf-fixed-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .bf-fixed-deadline,
+  .bf-fixed-actions {
+    padding-left: 0;
+  }
+
+  .bf-fixed-deadline::before,
+  .bf-fixed-actions::before {
+    display: none;
+  }
+
+  .bf-fixed-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .bf-btn {
+    width: 100%;
+  }
+
+  .bf-fixed-close {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 /* Section Styles */
-section:not(.bf-banner) {
+section:not(.bf-banner):not(.bf-fixed) {
   padding: 6rem 0;
 }
 
@@ -1343,3 +1529,7 @@ tr:last-child td {
     max-width: none;
   }
 }
+
+
+
+

@@ -38,36 +38,31 @@
   </nav>
 
   <!-- Black Friday Banner -->
-  <section class="bf-banner" id="black-friday">
+  <section class="bf-fixed" id="black-friday" aria-label="Oferta Black Friday">
     <div class="container">
-      <div class="bf-banner-wrapper">
-        <div class="bf-banner-left">
-          <span class="bf-badge">OFERTA ESPECIAL</span>
-          <h2 class="bf-left-title">
-            <span>BLACK</span>
-            <span>FRIDAY</span>
-          </h2>
+      <div class="bf-fixed-wrapper">
+        <div class="bf-fixed-badge">
+          <span>Black Friday</span>
         </div>
-
-        <div class="bf-banner-content">
-          <h1 class="bf-title">Site + Sistema Completo por<br><span class="old-price-big">De R$129,90</span><span>R$ 89,90/mês</span></h1>
-
-          <p class="bf-subtitle">
-            <span>De R$ 129,80 por R$ 89,90/mês</span>
-            <span>+ setup assistido para publicar seu site</span>
-          </p>
-
-          <ul class="bf-benefits">
-            <li>Site profissional com WhatsApp</li>
-            <li>Sistema com agenda, prontuário e financeiro</li>
-            <li>Teste grátis, sem cartão</li>
-          </ul>
-
-          <button class="btn bf-cta" type="button"
-            onclick="window.location.href='https://app.psicoflow.com.br/site/landing'">
-            Garantir Combo agora</button>
-
-          <p class="bf-urgency">⚡ Válido por tempo limitado</p>
+        <div class="bf-fixed-offer">
+          <p><strong>Site Profissional + Sistema Completo</strong> + 15 dias de teste sem cartão</p>
+        </div>
+        <div class="bf-fixed-deadline">
+          <svg class="bf-fixed-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"></circle>
+            <path d="M12 7v5l3 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <div class="bf-fixed-deadline-text">
+            <span class="bf-deadline-title">Válido até 29/11 23:59</span>
+            <span class="bf-deadline-subtitle">BRT</span>
+          </div>
+        </div>
+        <div class="bf-fixed-actions">
+          <a class="bf-btn bf-btn-primary" href="https://app.psicoflow.com.br/site/landing">Começar teste grátis</a>
+          <a class="bf-btn bf-btn-secondary" href="#planos">Ver planos</a>
+          <button class="bf-fixed-close" type="button" aria-label="Fechar banner">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
       </div>
     </div>
@@ -639,3 +634,4 @@
   </script>
 </body>
 </html>
+
